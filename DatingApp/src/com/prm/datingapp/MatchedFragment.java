@@ -32,24 +32,18 @@
 
 package com.prm.datingapp;
 
-import java.util.ArrayList;
-
-import android.app.Fragment;
 import android.content.Context;
-import android.os.Bundle;
 //import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tab4Activity extends BaseAdapter{   
+public class MatchedFragment extends BaseAdapter{   
     String [] result;
     Context context;
  int [] imageId;
@@ -86,7 +80,7 @@ public class Tab4Activity extends BaseAdapter{
         // TODO Auto-generated method stub
         Holder holder=new Holder();
         View rowView;       
-             rowView = inflater.inflate(R.layout.tab4, null);
+             rowView = inflater.inflate(R.layout.fragment_matched, null);
              holder.tv=(TextView) rowView.findViewById(R.id.textView1);
              holder.img=(ImageView) rowView.findViewById(R.id.imageView1);       
          holder.tv.setText(result[position]);

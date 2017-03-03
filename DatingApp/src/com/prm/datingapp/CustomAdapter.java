@@ -21,7 +21,7 @@ public class CustomAdapter extends BaseAdapter{
          inflater = ( LayoutInflater )context.
                  getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-    public CustomAdapter(Tab4Activity tab4Activity, String[] prgmNameList, int[] prgmImages) {
+    public CustomAdapter(MatchedFragment tab4Activity, String[] prgmNameList, int[] prgmImages) {
 		// TODO Auto-generated constructor stub
 	}
 	@Override
@@ -52,7 +52,7 @@ public class CustomAdapter extends BaseAdapter{
         // TODO Auto-generated method stub
         Holder holder=new Holder();
         View rowView;       
-             rowView = inflater.inflate(R.layout.tab4, null);
+             rowView = inflater.inflate(R.layout.fragment_matched, null);
              holder.tv=(TextView) rowView.findViewById(R.id.textView1);
              holder.img=(ImageView) rowView.findViewById(R.id.imageView1);       
          holder.tv.setText(result[position]);

@@ -1,6 +1,5 @@
 package com.prm.datingapp;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,28 +20,24 @@ public class HomeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-	}
 		//setup();
 		
 		//add
-//		//add
-//		homeTabhost = (TabHost)findViewById(R.id.tabHost);
-//		
-//		homeTabhost.setup();
-//
-//		TabSpec tab = homeTabhost.newTabSpec("tab1").setIndicator("Tab1");
-//		tab.setContent(R.lay);
-//		homeTabhost.addTab(tab);
-////		homeTabhost.addTab(homeTabhost.newTabSpec("tab2").setIndicator("Tab2"),
-////				Tab2Activity.class, null);
-////		homeTabhost.addTab(homeTabhost.newTabSpec("tab3").setIndicator("Tab3"),
-////				Tab3Activity.class, null);
-//		FragmentTabHost homeTabhost = (FragmentTabHost)findViewById(R.id.tabHost);
-//        mTabHost.setup(FragmentTabExampleActivity.this, getSupportFragmentManager(), android.R.id.tabcontent);
-//        mTabHost.addTab(mTabHost.newTabSpec("First Tab").setIndicator("First Tab"), new FirstFragment().getClass(), null);
-//        mTabHost.addTab(mTabHost.newTabSpec("Second Tab").setIndicator("Second Tab"), new SecondFragment().getClass(), null);
-//        mTabHost.addTab(mTabHost.newTabSpec("Third Tab").setIndicator("Third Tab"), new ThirdFragment().getClass(), null);
-//    }
+		//add
+		this.homeTabhost = (TabHost)findViewById(android.R.id.tabhost);
+		
+		homeTabhost.setup();
+
+		TabSpec info  = homeTabhost.newTabSpec("fragment_info").setIndicator("Info").setContent(R.id.fragment_info_layout);
+		TabSpec setting  = homeTabhost.newTabSpec("fragment_setting").setIndicator("Setting").setContent(R.id.fragment_setting_layout);
+		TabSpec search = homeTabhost.newTabSpec("fragment_search").setIndicator("Search").setContent(R.id.fragment_search_layout);
+		TabSpec matched = homeTabhost.newTabSpec("fragment_matched").setIndicator("Matched").setContent(R.id.fragment_matched_layout);
+		
+		homeTabhost.addTab(info);
+		homeTabhost.addTab(setting);
+		homeTabhost.addTab(search);
+		homeTabhost.addTab(matched);
+	}
 		//add end
 	
 
@@ -65,6 +60,7 @@ public class HomeActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
+	@SuppressWarnings("unused")
 	private void setup() {
 		Bundle bundle = getIntent().getBundleExtra("user_info");
 		String id = bundle.getLong("user_id") + "";

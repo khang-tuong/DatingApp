@@ -2,19 +2,11 @@ package com.prm.datingapp;
 
 
 import android.app.Activity;
-import android.app.Dialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TabHost;
-import android.*;
-import com.prm.datingapp.HomeActivity;
 
 /**
  * @author khang
@@ -30,28 +22,6 @@ public class MainActivity extends Activity {
 		
 	
 	}
-
-//	 public void selectFrag(View view) {
-//
-//		          Fragment fr;
-//		          if(view == findViewById(R.id.home)) {
-//		              fr = new Tab1Activity();
-//		          }
-////		          else if(view == findViewById(R.id.SEARCH)) {
-////		              fr = new Tab3Activity();
-////		          }
-////		          else if(view == findViewById(R.id.Matchs)) {
-////		              fr = new Tab4Activity();
-////		          }
-//		          else {
-//		              fr = new Tab1Activity();
-//		          }
-//		          FragmentManager fm = getFragmentManager();
-//		          FragmentTransaction fragmentTransaction = fm.beginTransaction();
-//		          fragmentTransaction.replace(R.id.tableLayout1, fr);
-//		          fragmentTransaction.commit();
-//	     }
-////add end
 	
 	
 	@Override
@@ -77,7 +47,6 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(this, LoginActivity.class);
 		startActivity(intent);
 		
-		//add Hungdm
 		
 	}
 

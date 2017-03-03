@@ -1,7 +1,7 @@
 package com.prm.datingapp;
 
 
-import com.prm.tasks.LoginTask;
+//import com.prm.tasks.LoginTask;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
+//import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
@@ -44,7 +44,7 @@ public class LoginActivity extends Activity {
 //		String password = ((EditText) findViewById(R.id.activity_login_txtPassword)).getText().toString();
 //		
 //		new LoginTask(this).execute(username, password);
-		Intent intent = new Intent(this, HomeActivity.class);
+		Intent intent = new Intent(this, com.prm.datingapp.HomeActivity.class);
 		Bundle bundle = new Bundle();
 		bundle.putLong("user_id", 1);
 		intent.putExtra("user_info", bundle);

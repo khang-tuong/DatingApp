@@ -7,7 +7,7 @@
 //import android.view.View;
 //import android.view.ViewGroup;
 //
-//public class Tab3Activity  extends Fragment {
+//public class Tab2Activity  extends Fragment {
 //	 @Override
 //
 //	    public View onCreateView(LayoutInflater inflater,
@@ -20,7 +20,7 @@
 //
 //	       return inflater.inflate(
 //
-//	               R.layout.tab3, container, false);
+//	               R.layout.tab2, container, false);
 //
 //	    }
 //
@@ -29,6 +29,7 @@
 ////	}
 //
 //}
+
 
 
 package com.prm.datingapp;
@@ -40,13 +41,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Tab3Activity extends Fragment  {
+public class SettingFragment extends Fragment  {
 
  @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
         Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View V = inflater.inflate(R.layout.tab3, container, false);
+        View V = inflater.inflate(R.layout.fragment_setting, container, false);
 
         return V;
     }

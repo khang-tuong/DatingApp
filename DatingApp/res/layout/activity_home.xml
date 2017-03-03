@@ -44,7 +44,6 @@
             android:id="@+id/tableRow5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
         </TableRow>
 
         <TableRow
@@ -66,88 +65,14 @@
         </TableRow>
     </TableLayout>
 
-   <TabHost
-        android:id="@+id/tabHost"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="100dp" >
-                              
-            </TabWidget>
-
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/INFO"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                      />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/SETTING"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                   
-                    android:orientation="vertical">
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/SEARCH"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                   
-                    android:orientation="vertical">
-
-
-                </LinearLayout>
-                
-                                <LinearLayout
-                    android:id="@+id/Matchs"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                   
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="This is tab 3" />
-                </LinearLayout>
-                
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/textView1"
-        android:text="Log out"
-        android:onClick = "onLogout"
-         />
+        android:onClick="onLogout"
+        android:text="Log out" />
 
     <Button
         android:id="@+id/button1"
@@ -156,5 +81,36 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignParentBottom="true"
         android:text="Apply" />
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtdistrict" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                 <include layout="@layout/fragment_info"/>
+                 <include layout="@layout/fragment_matched"/>
+                 <include layout="@layout/fragment_search" />
+                 <include layout="@layout/fragment_setting" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </TabHost>
 
 </RelativeLayout>

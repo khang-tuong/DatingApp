@@ -7,12 +7,11 @@
 //import android.view.View;
 //import android.view.ViewGroup;
 //
-//public class Tab2Activity  extends Fragment {
+//
+//public class Tab1Activity  extends Fragment {
 //	 @Override
 //
-//	    public View onCreateView(LayoutInflater inflater,
-//
-//	       ViewGroup container, Bundle savedInstanceState) {
+//	    public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
 //
 //	        
 //
@@ -20,7 +19,7 @@
 //
 //	       return inflater.inflate(
 //
-//	               R.layout.tab2, container, false);
+//	               R.layout.tab1, container, false);
 //
 //	    }
 //
@@ -41,13 +40,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Tab2Activity extends Fragment  {
+public class InfoFragment extends Fragment  {
 
  @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
         Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View V = inflater.inflate(R.layout.tab2, container, false);
+        View V = inflater.inflate(R.layout.fragment_info, container, false);
 
         return V;
     }
