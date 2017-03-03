@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+import com.prm.datingapp.HomeActivity;
 
 public class HomeActivity extends Activity {
 	private TabHost homeTabhost;
@@ -20,23 +21,30 @@ public class HomeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+	}
 		//setup();
 		
 		//add
-		//add
-		homeTabhost = (TabHost)findViewById(R.id.tabHost);
-		
-		homeTabhost.setup();
-
-		TabSpec tab = homeTabhost.newTabSpec("tab1").setIndicator("Tab1");
-		tab.setContent(R.layout.tab1);
-		homeTabhost.addTab(tab);
-//		homeTabhost.addTab(homeTabhost.newTabSpec("tab2").setIndicator("Tab2"),
-//				Tab2Activity.class, null);
-//		homeTabhost.addTab(homeTabhost.newTabSpec("tab3").setIndicator("Tab3"),
-//				Tab3Activity.class, null);
+//		//add
+//		homeTabhost = (TabHost)findViewById(R.id.tabHost);
+//		
+//		homeTabhost.setup();
+//
+//		TabSpec tab = homeTabhost.newTabSpec("tab1").setIndicator("Tab1");
+//		tab.setContent(R.lay);
+//		homeTabhost.addTab(tab);
+////		homeTabhost.addTab(homeTabhost.newTabSpec("tab2").setIndicator("Tab2"),
+////				Tab2Activity.class, null);
+////		homeTabhost.addTab(homeTabhost.newTabSpec("tab3").setIndicator("Tab3"),
+////				Tab3Activity.class, null);
+//		FragmentTabHost homeTabhost = (FragmentTabHost)findViewById(R.id.tabHost);
+//        mTabHost.setup(FragmentTabExampleActivity.this, getSupportFragmentManager(), android.R.id.tabcontent);
+//        mTabHost.addTab(mTabHost.newTabSpec("First Tab").setIndicator("First Tab"), new FirstFragment().getClass(), null);
+//        mTabHost.addTab(mTabHost.newTabSpec("Second Tab").setIndicator("Second Tab"), new SecondFragment().getClass(), null);
+//        mTabHost.addTab(mTabHost.newTabSpec("Third Tab").setIndicator("Third Tab"), new ThirdFragment().getClass(), null);
+//    }
 		//add end
-	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
