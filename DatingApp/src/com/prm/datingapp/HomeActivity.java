@@ -11,14 +11,31 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
 
 public class HomeActivity extends Activity {
-
+	private TabHost homeTabhost;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		setup();
+		//setup();
+		
+		//add
+		//add
+		homeTabhost = (TabHost)findViewById(R.id.tabHost);
+		
+		homeTabhost.setup();
+
+		TabSpec tab = homeTabhost.newTabSpec("tab1").setIndicator("Tab1");
+		tab.setContent(R.layout.tab1);
+		homeTabhost.addTab(tab);
+//		homeTabhost.addTab(homeTabhost.newTabSpec("tab2").setIndicator("Tab2"),
+//				Tab2Activity.class, null);
+//		homeTabhost.addTab(homeTabhost.newTabSpec("tab3").setIndicator("Tab3"),
+//				Tab3Activity.class, null);
+		//add end
 	}
 
 	@Override

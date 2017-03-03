@@ -9,7 +9,7 @@
     tools:context="com.example.datingapp.MainActivity" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
@@ -19,11 +19,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/txtName"
+        android:layout_below="@+id/txtName"
         android:layout_marginTop="72dp"
         android:text="Password"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -32,8 +32,8 @@
         android:id="@+id/activity_register_txtUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/txtAge"
+        android:layout_below="@+id/txtName"
         android:layout_marginTop="19dp"
         android:ems="10" >
 
@@ -44,8 +44,8 @@
         android:id="@+id/activity_register_txtPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/txtAge"
+        android:layout_below="@+id/txtAge"
         android:layout_marginTop="23dp"
         android:ems="10" />
 

@@ -19,7 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/activity_register_txtUsername"
@@ -29,7 +29,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/activity_register_txtUsername"
@@ -48,7 +48,7 @@
         android:inputType="textPassword" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/activity_register_txtPassword"
@@ -61,8 +61,8 @@
         android:id="@+id/activity_register_txtConfirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/txtDes"
+        android:layout_below="@+id/txtDes"
         android:ems="10"
         android:inputType="textPassword" >
 
@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/activity_register_txtPassword"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/txtName"
         android:ems="10" />
 
     <EditText
