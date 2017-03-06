@@ -6,125 +6,102 @@
     android:orientation="vertical" >
 
     <TableLayout
-                        android:id="@+id/tableLayout1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="30dp" >
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp" >
 
-                        <TableRow
-                            android:id="@+id/tableRow1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" >
-                        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-                        <TableRow
-                            android:id="@+id/tableRow2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/activity_home_txtUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Name" />
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+            <EditText
+                android:id="@+id/fragment_info_txtName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" >
 
-                                <TextView
-                                    android:id="@+id/textView2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="Name" />
+                <requestFocus />
+            </EditText>
+        </TableRow>
 
-                                <EditText
-                                    android:id="@+id/txtname"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:inputType="textPersonName" />
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-                            </LinearLayout>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Age" />
 
-                        </TableRow>
+            <Spinner
+                android:id="@+id/fragment_info_spAge"
+                android:layout_width="20dp"
+                android:layout_height="40dp"
+                android:layout_weight="1.5" />
+        </TableRow>
 
-                        <TableRow
-                            android:id="@+id/tableRow3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" >
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/activity_home_txtWelcome"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="District" />
 
-                                <TextView
-                                    android:id="@+id/textView3"
-                                    android:layout_width="20dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="Age" />
+            <Spinner
+                android:id="@+id/fragment_info_spDistrict"
+                android:layout_width="20dp"
+                android:layout_height="40dp"
+                android:layout_weight="1.5" />
+        </TableRow>
 
-                                <Spinner
-                                    android:id="@+id/spinner1"
-                                    android:layout_width="20dp"
-                                    android:layout_height="40dp"
-                                    android:layout_weight="1.5" />
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-                            </LinearLayout>
+            <TextView
+                android:id="@+id/txtDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Self Introduction" />
+        </TableRow>
 
-                        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
 
-                        <TableRow
-                            android:id="@+id/tableRow4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" >
+            <EditText
+                android:id="@+id/fragment_info_txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+        </TableRow>
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+    </TableLayout>
 
-                                <TextView
-                                    android:id="@+id/textView1"
-                                    android:layout_width="20dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="District" />
-
-                                <Spinner
-                                   android:id="@+id/spinner2"
-                                    android:layout_width="20dp"
-                                    android:layout_height="40dp"
-                                    android:layout_weight="1.5"/>
-                            </LinearLayout>
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/tableRow5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" >
-
-                            <TextView
-                                android:id="@+id/txtDes"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Self Introduction" />
-
-                        </TableRow>
-
-                        <TableRow
-                            android:id="@+id/tableRow6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" >
-
-                            <EditText
-                                android:id="@+id/txtself"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ems="10" />
-
-                        </TableRow>
-
-                    </TableLayout>
-    
-    
-    
-    
 </LinearLayout>

@@ -81,8 +81,8 @@ public class MatchedFragment extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;       
              rowView = inflater.inflate(R.layout.fragment_matched, null);
-             holder.tv=(TextView) rowView.findViewById(R.id.textView1);
-             holder.img=(ImageView) rowView.findViewById(R.id.imageView1);       
+             holder.tv=(TextView) rowView.findViewById(R.id.activity_home_txtWelcome);
+             holder.img=(ImageView) rowView.findViewById(R.id.activity_home_userImage);       
          holder.tv.setText(result[position]);
          holder.img.setImageResource(imageId[position]);         
          rowView.setOnClickListener(new OnClickListener() {            

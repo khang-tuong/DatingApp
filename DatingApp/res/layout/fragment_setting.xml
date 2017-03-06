@@ -23,7 +23,7 @@
                                 android:layout_height="wrap_content" >
 
                                 <TextView
-                                    android:id="@+id/textView1"
+                                    android:id="@+id/activity_home_txtWelcome"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Interested in" />
@@ -58,7 +58,7 @@
                                 android:layout_height="wrap_content" >
 
                                 <TextView
-                                    android:id="@+id/textView2"
+                                    android:id="@+id/activity_home_txtUsername"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Age Range" />
