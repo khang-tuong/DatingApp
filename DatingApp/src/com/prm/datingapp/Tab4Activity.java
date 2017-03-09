@@ -32,9 +32,17 @@
 
 package com.prm.datingapp;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+import android.app.Activity;
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Fragment;
+import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
 //import android.support.v4.app.Fragment;
@@ -49,55 +57,47 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tab4Activity extends BaseAdapter{   
-    String [] result;
-    Context context;
- int [] imageId;
-      private static LayoutInflater inflater=null;
-    public void CustomAdapter(MainActivity mainActivity, String[] prgmNameList, int[] prgmImages) {
-        // TODO Auto-generated constructor stub
-        result=prgmNameList;
-        context=mainActivity;
-        imageId=prgmImages;
-         inflater = ( LayoutInflater )context.
-                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+public class Tab4Activity extends  ListActivity {
+    ListView list;
+    String[] web = {
+        "Google Plus",
+            "Twitter",
+            "Windows",
+            "Bing",
+            "Itunes",
+            "Wordpress",
+            "Drupal"
+    } ;
+    Integer[] imageId = {
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher
+ 
+    };
+    private List<String> listValues;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.tab4);
+ 
+        CustomList adapter = new
+                CustomList(Tab4Activity.this, web, imageId);
+        list=(ListView)findViewById(R.id.list);
+                list.setAdapter(adapter);
+                list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+ 
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view,
+                                            int position, long id) {
+                        Toast.makeText(Tab4Activity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+ 
+                    }
+                });
+ 
     }
-    public int getCount() {
-        // TODO Auto-generated method stub
-        return result.length;
-    }
-
-    public Object getItem(int position) {
-        // TODO Auto-generated method stub
-        return position;
-    }
-
-    public long getItemId(int position) {
-        // TODO Auto-generated method stub
-        return position;
-    }
-
-    public class Holder
-    {
-        TextView tv;
-        ImageView img;
-    }
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
-        Holder holder=new Holder();
-        View rowView;       
-             rowView = inflater.inflate(R.layout.tab4, null);
-             holder.tv=(TextView) rowView.findViewById(R.id.textView1);
-             holder.img=(ImageView) rowView.findViewById(R.id.imageView1);       
-         holder.tv.setText(result[position]);
-         holder.img.setImageResource(imageId[position]);         
-         rowView.setOnClickListener(new OnClickListener() {            
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
-            }
-        });   
-        return rowView;
-    }
-
-} 
+ 
+}

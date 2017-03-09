@@ -54,7 +54,7 @@ public class CustomAdapter extends BaseAdapter{
         View rowView;       
              rowView = inflater.inflate(R.layout.tab4, null);
              holder.tv=(TextView) rowView.findViewById(R.id.textView1);
-             holder.img=(ImageView) rowView.findViewById(R.id.imageView1);       
+             holder.img=(ImageView) rowView.findViewById(R.id.image);       
          holder.tv.setText(result[position]);
          holder.img.setImageResource(imageId[position]);         
          rowView.setOnClickListener(new OnClickListener() {            
@@ -63,6 +63,7 @@ public class CustomAdapter extends BaseAdapter{
                 // TODO Auto-generated method stub
                 Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
             }
+            
         });   
         return rowView;
     }
