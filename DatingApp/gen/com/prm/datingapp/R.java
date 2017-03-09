@@ -29,7 +29,7 @@ public final class R {
         public static final int Matchs=0x7f08000b;
         public static final int SEARCH=0x7f08000a;
         public static final int SETTING=0x7f080009;
-        public static final int action_settings=0x7f080030;
+        public static final int action_settings=0x7f08002f;
         public static final int activity_login_btnLogin=0x7f080013;
         public static final int activity_login_lbPassword=0x7f08000f;
         public static final int activity_login_lbTitle=0x7f08000e;
@@ -44,27 +44,26 @@ public final class R {
         public static final int button1=0x7f08000d;
         public static final int button2=0x7f08000c;
         public static final int home=0x7f080000;
-        public static final int image=0x7f08001c;
-        public static final int list=0x7f08002f;
+        public static final int image=0x7f080021;
         public static final int radFemale=0x7f08002b;
         public static final int radMale=0x7f08002a;
         public static final int sbRange=0x7f08002c;
-        public static final int spinner1=0x7f080025;
+        public static final int spinner1=0x7f080026;
         public static final int spinner2=0x7f080027;
         public static final int tabHost=0x7f080007;
-        public static final int tableLayout1=0x7f08001e;
+        public static final int tableLayout1=0x7f080022;
         public static final int tableLayout2=0x7f080029;
-        public static final int tableRow1=0x7f08001f;
-        public static final int tableRow2=0x7f080020;
-        public static final int tableRow3=0x7f080023;
-        public static final int tableRow4=0x7f080026;
+        public static final int tableRow1=0x7f08001c;
+        public static final int tableRow2=0x7f08001e;
+        public static final int tableRow3=0x7f08001f;
+        public static final int tableRow4=0x7f080020;
         public static final int tableRow5=0x7f080003;
         public static final int tableRow6=0x7f080004;
         public static final int tableRow7=0x7f080005;
         public static final int tableRow8=0x7f080006;
         public static final int textView1=0x7f080001;
-        public static final int textView2=0x7f080021;
-        public static final int textView3=0x7f080024;
+        public static final int textView2=0x7f080023;
+        public static final int textView3=0x7f080025;
         public static final int textView5=0x7f08002d;
         public static final int txt=0x7f08001d;
         public static final int txtAge=0x7f080015;
@@ -72,7 +71,7 @@ public final class R {
         public static final int txtDistrict=0x7f08002e;
         public static final int txtName=0x7f080014;
         public static final int txtdistrict=0x7f080002;
-        public static final int txtname=0x7f080022;
+        public static final int txtname=0x7f080024;
         public static final int txtself=0x7f080028;
     }
     public static final class layout {

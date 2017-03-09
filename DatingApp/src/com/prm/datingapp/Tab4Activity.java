@@ -38,12 +38,17 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.app.Activity;
+import android.app.AlertDialog;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.listactivitytest.MainActivity;
 
 import android.app.Fragment;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 //import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -86,15 +91,33 @@ public class Tab4Activity extends  ListActivity {
  
         CustomList adapter = new
                 CustomList(Tab4Activity.this, web, imageId);
-        list=(ListView)findViewById(R.id.list);
+        list=(ListView)findViewById(android.R.id.list);
                 list.setAdapter(adapter);
                 list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
  
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view,
                                             int position, long id) {
-                        Toast.makeText(Tab4Activity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
- 
+//                        Toast.makeText(Tab4Activity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+                    	  final int InternalPosition = position;
+//	                        Toast.makeText(MainActivity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+	                    	   DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+	                               @Override
+	                               public void onClick(DialogInterface dialog, int which) {
+	                                   switch (which){
+	                                   case DialogInterface.BUTTON_POSITIVE:
+	                                       // This doesn't work, can't access position from here 
+	                                	   Object o = Tab4Activity.this.getListView().getItemAtPosition(InternalPosition);
+	                                      
+	                                       break;
+	                                   }
+	                               }
+	                           };
+
+	                           AlertDialog.Builder builder = new AlertDialog.Builder(Tab4Activity.this);
+	                           builder.setMessage("Are you sure you want to do this?").setPositiveButton("Yes", dialogClickListener)
+	                               .setNegativeButton("No", dialogClickListener).show();
+	                        //check dialog here
                     }
                 });
  
