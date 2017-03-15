@@ -30,6 +30,7 @@ import com.prm.datingapp.HomeActivity;
 
 public class HomeActivity extends ActivityGroup {
 	private TabHost homeTabhost;
+	public static JSONObject json;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,10 +78,12 @@ public class HomeActivity extends ActivityGroup {
 		TabSpec search = homeTabhost.newTabSpec("fragment_search").setIndicator("Search").setContent(new Intent(this, SearchFragment.class));
 		TabSpec matched = homeTabhost.newTabSpec("fragment_matched").setIndicator("Matched").setContent(new Intent(this, MatchedFragment.class));
 		
+		homeTabhost.clearAllTabs();
 		homeTabhost.addTab(info);
 		homeTabhost.addTab(setting);
 		homeTabhost.addTab(search);
 		homeTabhost.addTab(matched);
+		InfoFragment.host = HomeActivity.this;
 		
 		this.homeTabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 			
@@ -88,16 +91,19 @@ public class HomeActivity extends ActivityGroup {
 			public void onTabChanged(String tabId) {
 				// TODO Auto-generated method stub
 				if (tabId.equals("fragment_info")) {
-					//setupInfo(json);
+					InfoFragment.host = HomeActivity.this;
+				} else if (tabId.equals("fragment_setting")){
+					SettingFragment.host = HomeActivity.this;
 				}
 			}
 		});
+		
 	}
 	
 	public void onDoneGetInfo(String info) {
 		try {
 			JSONObject obj = new JSONObject(info);
-			InfoFragment.json = obj;
+			HomeActivity.json = obj;
 			TextView txtUsername = (TextView) findViewById(R.id.activity_home_txtUsername);
 			ImageView userImage = (ImageView) findViewById(R.id.activity_home_userImage);
 			
@@ -114,32 +120,38 @@ public class HomeActivity extends ActivityGroup {
 		}
 	}
 	
-	public void setupInfo(JSONObject json) {
-		// TODO Auto-generated method stub
-		EditText txtName = (EditText) this.findViewById(R.id.fragment_info_txtName);
-		EditText txtDescription = (EditText) this.findViewById(R.id.fragment_info_txtDescription);
-		Spinner spAge = (Spinner) this.findViewById(R.id.fragment_info_spAge);
-		Spinner spDistrict = (Spinner) this.findViewById(R.id.fragment_info_spDistrict);
-		
-		List<Integer> ages = new ArrayList<Integer>();
-		List<String> districts = new ArrayList<String>();
-		
-		for(int i = 18; i <= 60; ++i) {
-			ages.add(i);
-		}
-		for(int i = 1; i <= 12; ++i) {
-			districts.add(i + "");
-		}
-		
-		
+//	public void setupInfo(JSONObject json) {
+//		// TODO Auto-generated method stub
+//		EditText txtName = (EditText) this.findViewById(R.id.fragment_info_txtName);
+//		EditText txtDescription = (EditText) this.findViewById(R.id.fragment_info_txtDescription);
+//		Spinner spAge = (Spinner) this.findViewById(R.id.fragment_info_spAge);
+//		Spinner spDistrict = (Spinner) this.findViewById(R.id.fragment_info_spDistrict);
+//		
+//		List<Integer> ages = new ArrayList<Integer>();
+//		List<String> districts = new ArrayList<String>();
+//		
+//		for(int i = 18; i <= 60; ++i) {
+//			ages.add(i);
+//		}
+//		for(int i = 1; i <= 12; ++i) {
+//			districts.add(i + "");
+//		}
+//		
+//		
+//	
+//		try {
+//			txtName.setText(json.getString("name"));
+//			txtDescription.setText(json.getString("selfDescription"));
+//			spAge.setSelection(json.getInt("age") - 17);
+//		} catch (JSONException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
-		try {
-			txtName.setText(json.getString("name"));
-			txtDescription.setText(json.getString("selfDescription"));
-			spAge.setSelection(json.getInt("age") - 17);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void updateData(){
+		setup();
 	}
+	
+	
 }

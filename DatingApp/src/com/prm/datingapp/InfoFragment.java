@@ -6,20 +6,19 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.prm.tasks.UpdateInfoTask;
+
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
-//import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class InfoFragment extends Activity  {
 
-	public static JSONObject json;
+	public static HomeActivity host;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +26,13 @@ public class InfoFragment extends Activity  {
 		setContentView(R.layout.fragment_info);
 		setup();
 		
+	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		setup();
 	}
 
  
@@ -55,13 +61,38 @@ public class InfoFragment extends Activity  {
 		spDistrict.setAdapter(districtAdapter);
 		
 		try {
-			txtName.setText(json.getString("name"));
-			txtDescription.setText(json.getString("selfDescription"));
-			spAge.setSelection(json.getInt("age") - 17);
+			txtName.setText(HomeActivity.json.getString("name"));
+			txtDescription.setText(HomeActivity.json.getString("selfDescription"));
+			spAge.setSelection(HomeActivity.json.getInt("age") - 17);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void apply(View v) {
+		EditText txtName = (EditText) this.findViewById(R.id.fragment_info_txtName);
+		EditText txtDescription = (EditText) this.findViewById(R.id.fragment_info_txtDescription);
+		Spinner spAge = (Spinner) this.findViewById(R.id.fragment_info_spAge);
+		Spinner spDistrict = (Spinner) this.findViewById(R.id.fragment_info_spDistrict);
+		
+		String name = txtName.getText().toString();
+		String description = txtDescription.getText().toString();
+		Integer age = (Integer) spAge.getSelectedItem();
+		String district = (String) spDistrict.getSelectedItem();
+		
+		try {
+			new UpdateInfoTask(this).execute(HomeActivity.json.getString("id"), name, age.toString(), district, description);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void onDoneUpdateInfo(String result){
+		Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+		host.updateData();
 	}
  
  	

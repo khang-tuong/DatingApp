@@ -57,6 +57,7 @@ public class LoginActivity extends Activity {
 			bundle.putLong("user_id", id);
 			intent.putExtra("user_info", bundle);
 			startActivity(intent);
+			this.finish();
 		} else {
 			Toast.makeText(this, "Invalid account", Toast.LENGTH_SHORT).show();
 		}

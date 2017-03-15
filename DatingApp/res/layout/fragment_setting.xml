@@ -6,106 +6,124 @@
     android:orientation="vertical" >
 
     <TableLayout
-                        android:id="@+id/tableLayout2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="30dp" >
+        android:id="@+id/tableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp" >
 
-                        <TableRow
-                            android:id="@+id/tableRow1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="25dp"
-                            android:text="Interested in"
-                             >
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="Interested in" >
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-                                <TextView
-                                    android:id="@+id/activity_home_txtWelcome"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Interested in" />
+                <TextView
+                    android:id="@+id/activity_register_lbAppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingTop="12dp"
+                    android:text="Interested in"
+                    android:textSize="16sp" />
 
-                                <RadioButton
-                                    android:id="@+id/radMale"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                   
-                                    android:text="Male" />
+                <RadioGroup
+                    android:id="@+id/fragment_setting_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:paddingLeft="10dp">
 
-                                <RadioButton
-                                    android:id="@+id/radFemale"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    
-                                    android:text="Female" />
+                    <RadioButton
+                        android:id="@+id/fragment_setting_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Male"
+                        android:textColor="@android:color/black" />
 
-                            </LinearLayout>
+                    <RadioButton
+                        android:id="@+id/fragment_setting_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:textColor="@android:color/black" />
 
-                        </TableRow>
+                </RadioGroup>
 
-                        <TableRow
-                            android:id="@+id/tableRow2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                           
-                             >
+            </LinearLayout>
+        </TableRow>
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp">
 
-                                <TextView
-                                    android:id="@+id/activity_home_txtUsername"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Age Range" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-                                <SeekBar
-                                    android:id="@+id/sbRange"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/activity_home_txtUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age Range"
+                    android:textSize="16sp" />
 
-                            </LinearLayout>
+                <SeekBar
+                    android:id="@+id/fragment_setting_sbAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="35dp" />
+            </LinearLayout>
+        </TableRow>
 
-                        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp">
 
-                        <TableRow
-                            android:id="@+id/tableRow3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" >
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prefered District" />
 
-                                <TextView
-                                    android:id="@+id/textView5"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Prefered District" />
+                <EditText
+                    android:id="@+id/txtDistrict"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+        </TableRow>
 
-                                <EditText
-                                    android:id="@+id/txtDistrict"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:inputType="textPersonName" />
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
 
-                            </LinearLayout>
+        <Button
+            android:id="@+id/fragment_setting_btnApply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:onClick="apply" />
 
-                        </TableRow>
+    </TableLayout>
 
-                        <TableRow
-                            android:id="@+id/tableRow4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" >
-                        </TableRow>
-
-                    </TableLayout>
-    
 </LinearLayout>

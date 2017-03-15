@@ -8,15 +8,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.prm.datingapp.HomeActivity" >
+    tools:context="com.prm.datingapp.HomeActivity" 
+    android:background="@drawable/background">
 
     <TextView
-        android:id="@+id/activity_home_txtWelcome"
+        android:id="@+id/activity_register_lbAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Welcome"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/black" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,13 +40,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Log out" />
+                android:text="Log out"
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 

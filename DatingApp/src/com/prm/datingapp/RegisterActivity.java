@@ -1,11 +1,16 @@
 package com.prm.datingapp;
 
 
+import com.prm.tasks.RegisterAsyncTask;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegisterActivity extends Activity {
 
@@ -40,5 +45,17 @@ public class RegisterActivity extends Activity {
 		bundle.putLong("user_id", id);
 		intent.putExtra("user_info", bundle);
 		startActivity(intent);
+	}
+	
+	public void onRegister(View v) {
+		String username = ((EditText) findViewById(R.id.activity_register_txtUsername)).getText().toString();
+		String password = ((EditText) findViewById(R.id.activity_register_txtPassword)).getText().toString();
+		String confirmPassword = ((EditText) findViewById(R.id.activity_register_txtConfirmPassword)).getText().toString();
+		
+		if (!password.equals(confirmPassword)) {
+			Toast.makeText(this, "Password mismatch", Toast.LENGTH_SHORT).show();
+		} else {
+			new RegisterAsyncTask(this).execute(username, password, confirmPassword);
+		}
 	}
 }

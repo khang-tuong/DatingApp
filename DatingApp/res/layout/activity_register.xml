@@ -6,46 +6,41 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.prm.datingapp.RegisterPageActivity" >
+    tools:context="com.prm.datingapp.RegisterPageActivity"
+    android:background="@drawable/background" >
 
     <TextView
-        android:id="@+id/activity_home_txtWelcome"
+        android:id="@+id/activity_register_lbAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:text="Dating"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/activity_register_txtUsername"
-        android:layout_below="@+id/activity_home_txtWelcome"
+        android:layout_below="@+id/activity_register_lbAppName"
         android:layout_marginTop="20dp"
         android:text="Username"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:textColor="@android:color/black" />
 
     <TextView
-        android:id="@+id/txtAge"
+        android:id="@+id/activity_register_lbPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/activity_register_txtUsername"
         android:layout_below="@+id/activity_register_txtUsername"
         android:layout_marginTop="24dp"
         android:text="Password"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/activity_register_txtPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:inputType="textPassword" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black"  />
 
     <TextView
         android:id="@+id/txtDes"
@@ -55,7 +50,8 @@
         android:layout_below="@+id/activity_register_txtPassword"
         android:layout_marginTop="17dp"
         android:text="Password again"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black"  />
 
     <EditText
         android:id="@+id/activity_register_txtConfirmPassword"
@@ -86,12 +82,22 @@
         android:ems="10"
         android:text="[Error messege]" />
 
+    <EditText
+        android:id="@+id/activity_register_txtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_register_lbPassword"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/activity_register_btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/activity_register_txtError"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/txtName"
         android:onClick="onRegister"
         android:text="Register" />
 
