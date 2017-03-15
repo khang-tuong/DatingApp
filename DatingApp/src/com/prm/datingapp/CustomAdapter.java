@@ -52,9 +52,11 @@ public class CustomAdapter extends BaseAdapter{
         // TODO Auto-generated method stub
         Holder holder=new Holder();
         View rowView;       
+
              rowView = inflater.inflate(R.layout.fragment_matched, null);
              holder.tv=(TextView) rowView.findViewById(R.id.activity_register_lbAppName);
              holder.img=(ImageView) rowView.findViewById(R.id.activity_home_userImage);       
+
          holder.tv.setText(result[position]);
          holder.img.setImageResource(imageId[position]);         
          rowView.setOnClickListener(new OnClickListener() {            
@@ -63,6 +65,7 @@ public class CustomAdapter extends BaseAdapter{
                 // TODO Auto-generated method stub
                 Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
             }
+            
         });   
         return rowView;
     }
