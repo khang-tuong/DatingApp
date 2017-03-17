@@ -43,7 +43,6 @@ import android.app.AlertDialog;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.listactivitytest.MainActivity;
 
 import android.app.Fragment;
 import android.app.ListActivity;
@@ -73,22 +72,33 @@ public class Tab4Activity extends  ListActivity {
             "Wordpress",
             "Drupal"
     } ;
+  
     Integer[] imageId = {
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher
+            R.drawable.image,
+            R.drawable.image,
+            R.drawable.image,
+            R.drawable.image,
+            R.drawable.image,
+            R.drawable.image,
+            R.drawable.image
  
     };
     private List<String> listValues;
+    
+    
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+            // Inflate the layout for this fragment
+            View V = inflater.inflate(R.layout.tab4, container, false);
+
+            return V;
+        }
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab4);
- 
+
         CustomList adapter = new
                 CustomList(Tab4Activity.this, web, imageId);
         list=(ListView)findViewById(android.R.id.list);
@@ -113,9 +123,13 @@ public class Tab4Activity extends  ListActivity {
 	                                   }
 	                               }
 	                           };
-
+	                           //show dialog 
 	                           AlertDialog.Builder builder = new AlertDialog.Builder(Tab4Activity.this);
-	                           builder.setMessage("Are you sure you want to do this?").setPositiveButton("Yes", dialogClickListener)
+	                           builder.setTitle("Trumph" +  " Age").setCustomTitle(null);
+	                       
+	                           builder.setMessage("Description");
+	                          
+	                           builder.setMessage("Hi, I'm" + "nameID" ).setPositiveButton("Yes", dialogClickListener)
 	                               .setNegativeButton("No", dialogClickListener).show();
 	                        //check dialog here
                     }

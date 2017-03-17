@@ -27,33 +27,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-	
+
 	}
 
-//	 public void selectFrag(View view) {
-//
-//		          Fragment fr;
-//		          if(view == findViewById(R.id.home)) {
-//		              fr = new Tab1Activity();
-//		          }
-////		          else if(view == findViewById(R.id.SEARCH)) {
-////		              fr = new Tab3Activity();
-////		          }
-////		          else if(view == findViewById(R.id.Matchs)) {
-////		              fr = new Tab4Activity();
-////		          }
-//		          else {
-//		              fr = new Tab1Activity();
-//		          }
-//		          FragmentManager fm = getFragmentManager();
-//		          FragmentTransaction fragmentTransaction = fm.beginTransaction();
-//		          fragmentTransaction.replace(R.id.tableLayout1, fr);
-//		          fragmentTransaction.commit();
-//	     }
-////add end
-	
-	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -74,11 +50,11 @@ public class MainActivity extends Activity {
 	}
 
 	public void onLogin(View v) {
-		Intent intent = new Intent(this, LoginActivity.class);
+//		Intent intent = new Intent(this, LoginActivity.class);
+		Intent intent = new Intent(this, HomeActivity.class);
 		startActivity(intent);
-		
-		//add Hungdm
-		
+		startActivity(intent);
+	
 	}
 
 	public void onRegister(View v) {

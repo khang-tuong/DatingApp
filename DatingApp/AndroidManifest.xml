@@ -45,6 +45,11 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" >
         </activity>
+        
+                <activity
+            android:name=".Tab4Activity"
+            android:label="tab4" >
+        </activity>
     </application>
 
 </manifest>

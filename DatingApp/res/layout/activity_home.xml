@@ -97,19 +97,24 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
-                    <TextView
+
+                   <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                      />
-
+                        android:text="This is tab 1" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/SETTING"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                   
                     android:orientation="vertical">
+                   
+                                      <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="This is tab 2" />
+                    
                 </LinearLayout>
 
                 <LinearLayout
@@ -119,7 +124,10 @@
                    
                     android:orientation="vertical">
 
-
+                   <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="This is tab 3" />
                 </LinearLayout>
                 
                                 <LinearLayout
@@ -132,7 +140,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="This is tab 3" />
+                        android:text="This is tab 4" />
                 </LinearLayout>
                 
             </FrameLayout>

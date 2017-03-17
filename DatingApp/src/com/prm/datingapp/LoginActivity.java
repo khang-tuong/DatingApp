@@ -45,9 +45,9 @@ public class LoginActivity extends Activity {
 //		
 //		new LoginTask(this).execute(username, password);
 		Intent intent = new Intent(this, HomeActivity.class);
-		Bundle bundle = new Bundle();
-		bundle.putLong("user_id", 1);
-		intent.putExtra("user_info", bundle);
+//		Bundle bundle = new Bundle();
+//		bundle.putLong("user_id", 1);
+//		intent.putExtra("user_info", bundle);
 		startActivity(intent);
 	}
 	
