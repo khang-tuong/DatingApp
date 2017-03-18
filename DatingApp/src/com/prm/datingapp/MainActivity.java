@@ -1,33 +1,22 @@
 package com.prm.datingapp;
 
-
 import android.app.Activity;
-import android.app.Dialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TabHost;
-import android.*;
-import com.prm.datingapp.HomeActivity;
 
 /**
  * @author khang
  *
  */
 public class MainActivity extends Activity {
-	 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 	}
 
 	@Override
@@ -50,11 +39,8 @@ public class MainActivity extends Activity {
 	}
 
 	public void onLogin(View v) {
-//		Intent intent = new Intent(this, LoginActivity.class);
-		Intent intent = new Intent(this, HomeActivity.class);
+		Intent intent = new Intent(this, LoginActivity.class);
 		startActivity(intent);
-		startActivity(intent);
-	
 	}
 
 	public void onRegister(View v) {

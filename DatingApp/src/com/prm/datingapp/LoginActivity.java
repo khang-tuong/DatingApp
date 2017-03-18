@@ -40,15 +40,10 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void onLogin(View v) {
-//		String username = ((EditText) findViewById(R.id.activity_login_txtUsername)).getText().toString();
-//		String password = ((EditText) findViewById(R.id.activity_login_txtPassword)).getText().toString();
-//		
-//		new LoginTask(this).execute(username, password);
-		Intent intent = new Intent(this, HomeActivity.class);
-//		Bundle bundle = new Bundle();
-//		bundle.putLong("user_id", 1);
-//		intent.putExtra("user_info", bundle);
-		startActivity(intent);
+		String username = ((EditText) findViewById(R.id.activity_login_txtUsername)).getText().toString();
+		String password = ((EditText) findViewById(R.id.activity_login_txtPassword)).getText().toString();
+		
+		new LoginTask(this).execute(username, password);
 	}
 	
 	public void onLoginSuccess(int id) {
