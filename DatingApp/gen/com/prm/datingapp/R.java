@@ -26,7 +26,7 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f080030;
+        public static final int action_settings=0x7f08003d;
         public static final int activity_home_tabContent=0x7f080005;
         public static final int activity_home_txtUsername=0x7f080003;
         public static final int activity_home_userImage=0x7f080002;
@@ -43,7 +43,7 @@ public final class R {
         public static final int activity_register_txtError=0x7f080014;
         public static final int activity_register_txtPassword=0x7f080012;
         public static final int activity_register_txtUsername=0x7f08000f;
-        public static final int button2=0x7f08000c;
+        public static final int fragement_search_btnSearch=0x7f080026;
         public static final int fragment_info_btnApply=0x7f080022;
         public static final int fragment_info_layout=0x7f080015;
         public static final int fragment_info_spAge=0x7f08001b;
@@ -52,28 +52,41 @@ public final class R {
         public static final int fragment_info_txtName=0x7f080018;
         public static final int fragment_matched_layout=0x7f080023;
         public static final int fragment_search_layout=0x7f080024;
-        public static final int fragment_setting_btnApply=0x7f08002d;
-        public static final int fragment_setting_female=0x7f080029;
-        public static final int fragment_setting_gender=0x7f080027;
-        public static final int fragment_setting_layout=0x7f080025;
-        public static final int fragment_setting_male=0x7f080028;
-        public static final int fragment_setting_sbAge=0x7f08002a;
+        public static final int fragment_search_listview=0x7f080027;
+        public static final int fragment_search_txtSearch=0x7f080025;
+        public static final int fragment_setting_btnApply=0x7f080030;
+        public static final int fragment_setting_female=0x7f08002c;
+        public static final int fragment_setting_gender=0x7f08002a;
+        public static final int fragment_setting_layout=0x7f080028;
+        public static final int fragment_setting_male=0x7f08002b;
+        public static final int fragment_setting_sbAge=0x7f08002d;
+        public static final int fragment_show_avatar_btnChange=0x7f080033;
+        public static final int fragment_show_avatar_btnClose=0x7f080034;
+        public static final int fragment_show_avatar_image=0x7f080032;
         public static final int home=0x7f080000;
-        public static final int image=0x7f08002f;
+        public static final int image=0x7f080036;
+        public static final int search_list_item_image=0x7f080037;
+        public static final int search_list_item_txtName=0x7f080004;
+        public static final int show_detail_dialog_btnClose=0x7f08003c;
+        public static final int show_detail_dialog_btnDislike=0x7f08000c;
+        public static final int show_detail_dialog_btnLike=0x7f08003b;
+        public static final int show_detail_dialog_image=0x7f08003a;
+        public static final int show_detail_dialog_layout=0x7f080031;
+        public static final int show_detail_dialog_txtDescription=0x7f080038;
+        public static final int show_detail_dialog_txtName=0x7f080039;
         public static final int tableLayout1=0x7f080016;
-        public static final int tableLayout2=0x7f080026;
+        public static final int tableLayout2=0x7f080029;
         public static final int tableRow1=0x7f080017;
         public static final int tableRow2=0x7f080019;
         public static final int tableRow3=0x7f08001c;
         public static final int tableRow4=0x7f08001e;
         public static final int tableRow5=0x7f08001f;
         public static final int tableRow6=0x7f080021;
-        public static final int textView1=0x7f080004;
         public static final int textView3=0x7f08001a;
-        public static final int textView5=0x7f08002b;
-        public static final int txt=0x7f08002e;
+        public static final int textView5=0x7f08002e;
+        public static final int txt=0x7f080035;
         public static final int txtDes=0x7f080011;
-        public static final int txtDistrict=0x7f08002c;
+        public static final int txtDistrict=0x7f08002f;
         public static final int txtName=0x7f08000e;
     }
     public static final class layout {
@@ -87,7 +100,10 @@ public final class R {
         public static final int fragment_matched=0x7f030007;
         public static final int fragment_search=0x7f030008;
         public static final int fragment_setting=0x7f030009;
-        public static final int list_single=0x7f03000a;
+        public static final int fragment_show_avatar=0x7f03000a;
+        public static final int list_single=0x7f03000b;
+        public static final int search_list_item=0x7f03000c;
+        public static final int show_detail_dialog=0x7f03000d;
     }
     public static final class menu {
         public static final int home=0x7f070000;

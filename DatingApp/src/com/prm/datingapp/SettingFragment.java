@@ -78,13 +78,13 @@ public class SettingFragment extends Activity  {
 		
 		try {
 			if (HomeActivity.json.get("interest") != null)
-				if (HomeActivity.json.get("interest").toString().equalsIgnoreCase("True"))
+				if (HomeActivity.json.get("Interest").toString().equalsIgnoreCase("True"))
 					radioGroup.check(R.id.fragment_setting_male);
 				else 
 					radioGroup.check(R.id.fragment_setting_female);
 			
-			if(HomeActivity.json.get("ageRange") != null)
-				sb.setProgress(Integer.parseInt(HomeActivity.json.getString("ageRange")));
+			if(HomeActivity.json.get("AgeRange") != null)
+				sb.setProgress(Integer.parseInt(HomeActivity.json.getString("AgeRange")));
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -107,7 +107,7 @@ public class SettingFragment extends Activity  {
 		ageRange = sb.getProgress();
 		
 		try {
-			new UpdateSettingTask(this).execute(HomeActivity.json.getString("id"), interest + "", ageRange + "");
+			new UpdateSettingTask(this).execute(HomeActivity.json.getString("Id"), interest + "", ageRange + "");
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

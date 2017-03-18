@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/show_detail_dialog_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/show_detail_dialog_txtDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_detail_dialog_txtName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="TextView"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/show_detail_dialog_txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_detail_dialog_image"
+        android:layout_centerHorizontal="true"
+        android:text="TextView"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/show_detail_dialog_btnLike"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/show_detail_dialog_txtDescription"
+        android:text="Like" 
+        />
+
+    <Button
+        android:id="@+id/show_detail_dialog_btnDislike"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/show_detail_dialog_btnLike"
+        android:layout_alignBottom="@+id/show_detail_dialog_btnLike"
+        android:layout_alignParentRight="true"
+        android:text="Dislike" />
+
+    <ImageView
+        android:id="@+id/show_detail_dialog_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/show_detail_dialog_btnClose"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="X" />
+
+</RelativeLayout>

@@ -61,9 +61,9 @@ public class InfoFragment extends Activity  {
 		spDistrict.setAdapter(districtAdapter);
 		
 		try {
-			txtName.setText(HomeActivity.json.getString("name"));
-			txtDescription.setText(HomeActivity.json.getString("selfDescription"));
-			spAge.setSelection(HomeActivity.json.getInt("age") - 17);
+			txtName.setText(HomeActivity.json.getString("Name"));
+			txtDescription.setText(HomeActivity.json.getString("Description"));
+			spAge.setSelection(HomeActivity.json.getInt("Age") - 18);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -82,7 +82,7 @@ public class InfoFragment extends Activity  {
 		String district = (String) spDistrict.getSelectedItem();
 		
 		try {
-			new UpdateInfoTask(this).execute(HomeActivity.json.getString("id"), name, age.toString(), district, description);
+			new UpdateInfoTask(this).execute(HomeActivity.json.getString("Id"), name, age.toString(), district, description);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -10,7 +10,7 @@
     tools:context="com.example.datingapp.MainActivity" >
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/show_detail_dialog_btnDislike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/activity_register_btnRegister"

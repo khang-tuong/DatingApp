@@ -1,16 +1,13 @@
 package com.prm.datingapp;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.prm.tasks.DownloadImageTask;
-import com.prm.tasks.GetAccountAsyncTask;
 
-import android.app.Activity;
 import android.app.ActivityGroup;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -18,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,6 +29,7 @@ import com.prm.datingapp.HomeActivity;
 public class HomeActivity extends ActivityGroup {
 	private TabHost homeTabhost;
 	public static JSONObject json;
+	private ShowAvatarFragment showAvatarFragment;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +61,21 @@ public class HomeActivity extends ActivityGroup {
 	}
 	
 	private void setup() {
-		Bundle bundle = getIntent().getBundleExtra("user_info");
-		String id = bundle.getLong("user_id") + "";
-		new GetAccountAsyncTask(this).execute(id);
+		TextView txtUsername = (TextView) findViewById(R.id.activity_home_txtUsername);
+		ImageView userImage = (ImageView) findViewById(R.id.activity_home_userImage);
+		
+		try {
+			txtUsername.setText(json.getString("Name"));
+			String imageURL = json.getString("ImageUrl");
+			if (imageURL != null) {
+				new DownloadImageTask(userImage).execute(json.getString("ImageUrl"));
+				
+			}
+			setupTabs(json);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 	}
@@ -100,58 +111,41 @@ public class HomeActivity extends ActivityGroup {
 		
 	}
 	
-	public void onDoneGetInfo(String info) {
-		try {
-			JSONObject obj = new JSONObject(info);
-			HomeActivity.json = obj;
-			TextView txtUsername = (TextView) findViewById(R.id.activity_home_txtUsername);
-			ImageView userImage = (ImageView) findViewById(R.id.activity_home_userImage);
-			
-			txtUsername.setText(obj.getString("username"));
-			String imageURL = obj.getString("imageURL");
-			if (imageURL != null) {
-				new DownloadImageTask(userImage).execute(obj.getString("imageURL"));
-				
-			}
-			setupTabs(obj);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-//	public void setupInfo(JSONObject json) {
-//		// TODO Auto-generated method stub
-//		EditText txtName = (EditText) this.findViewById(R.id.fragment_info_txtName);
-//		EditText txtDescription = (EditText) this.findViewById(R.id.fragment_info_txtDescription);
-//		Spinner spAge = (Spinner) this.findViewById(R.id.fragment_info_spAge);
-//		Spinner spDistrict = (Spinner) this.findViewById(R.id.fragment_info_spDistrict);
-//		
-//		List<Integer> ages = new ArrayList<Integer>();
-//		List<String> districts = new ArrayList<String>();
-//		
-//		for(int i = 18; i <= 60; ++i) {
-//			ages.add(i);
-//		}
-//		for(int i = 1; i <= 12; ++i) {
-//			districts.add(i + "");
-//		}
-//		
-//		
-//	
-//		try {
-//			txtName.setText(json.getString("name"));
-//			txtDescription.setText(json.getString("selfDescription"));
-//			spAge.setSelection(json.getInt("age") - 17);
-//		} catch (JSONException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-	
 	public void updateData(){
 		setup();
 	}
+
+	public void logout(View v) {
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
+		this.finish();
+	}
+	
+	public void onAvatarClick(View v) throws JSONException {
+		this.showAvatarFragment = new ShowAvatarFragment(json.getString("ImageUrl"));
+		FragmentTransaction trans = getFragmentManager().beginTransaction();
+		Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+		if (prev != null) {
+			trans.remove(prev);
+		}
+		trans.addToBackStack(null);
+		
+		this.showAvatarFragment.show(trans, "dialog");
+		
+	}
+	
+	@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		this.showAvatarFragment.onActivityResult(requestCode, resultCode, data);
+        
+
+    }
+	
+	
+	
+	
+	
+	
 	
 	
 }

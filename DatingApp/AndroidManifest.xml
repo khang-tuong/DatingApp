@@ -48,6 +48,7 @@
         <activity android:name=".InfoFragment"></activity>
         <activity android:name=".SearchFragment"></activity>
         <activity android:name=".SettingFragment"></activity>
+        <activity android:name=".MatchedFragment"></activity>
         
     </application>
 

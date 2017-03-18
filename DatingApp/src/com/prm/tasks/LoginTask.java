@@ -12,7 +12,7 @@ import com.prm.datingapp.LoginActivity;
 import android.os.AsyncTask;
 
 
-public class LoginTask extends AsyncTask<String, String, Integer>{
+public class LoginTask extends AsyncTask<String, String, String>{
 
 	private LoginActivity activity;
 	
@@ -22,7 +22,7 @@ public class LoginTask extends AsyncTask<String, String, Integer>{
 	}
 	
 	
-	public Integer login(String username, String password) {
+	public String login(String username, String password) {
 		// TODO Auto-generated method stub
 		int id = -1;
 		try {
@@ -51,28 +51,28 @@ public class LoginTask extends AsyncTask<String, String, Integer>{
 		    if (code == 200){
 		    	BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 		    	String tmp = br.readLine();
-		    	id = Integer.parseInt(tmp);
+		    	return tmp;
 		    }
 		    
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return id;
+		return null;
 	}
 	
 
 
 	@Override
-	protected Integer doInBackground(String... params) {
+	protected String doInBackground(String... params) {
 		String username = params[0];
 		String password = params[1];
 		
-		int id = login(username, password);
-		return id;
+		String result = login(username, password);
+		return result;
 	}
 	
 	@Override
-	protected void onPostExecute(Integer result) {
+	protected void onPostExecute(String result) {
 		// TODO Auto-generated method stub
 		this.activity.onLoginSuccess(result);
 	}

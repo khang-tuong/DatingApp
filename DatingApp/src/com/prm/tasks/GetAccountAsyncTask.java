@@ -72,7 +72,7 @@ public class GetAccountAsyncTask extends AsyncTask<String, String, String>{
 	@Override
 	protected void onPostExecute(String result) {
 		// TODO Auto-generated method stub
-		this.activity.onDoneGetInfo(result);
+		//this.activity.onDoneGetInfo(result);
 	}
 	
 

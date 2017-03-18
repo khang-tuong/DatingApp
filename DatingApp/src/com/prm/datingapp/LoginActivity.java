@@ -1,6 +1,9 @@
 package com.prm.datingapp;
 
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.prm.tasks.LoginTask;
 
 //import com.prm.tasks.LoginTask;
@@ -50,16 +53,20 @@ public class LoginActivity extends Activity {
 		
 	}
 	
-	public void onLoginSuccess(int id) {
-		if (id > 0) {
-			Intent intent = new Intent(this, HomeActivity.class);
-			Bundle bundle = new Bundle();
-			bundle.putLong("user_id", id);
-			intent.putExtra("user_info", bundle);
-			startActivity(intent);
-			this.finish();
-		} else {
-			Toast.makeText(this, "Invalid account", Toast.LENGTH_SHORT).show();
+	public void onLoginSuccess(String result) {
+		try {
+			JSONObject json = new JSONObject(result);
+			if (!json.has("Error")) {
+				Intent intent = new Intent(this, HomeActivity.class);
+				HomeActivity.json = json;
+				startActivity(intent);
+				this.finish();
+			} else {
+				Toast.makeText(this, json.getString("Error"), Toast.LENGTH_SHORT).show();
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
