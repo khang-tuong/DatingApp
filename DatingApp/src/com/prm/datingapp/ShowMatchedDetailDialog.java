@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import com.prm.tasks.DownloadImageTask;
 import com.prm.tasks.LikeTask;
+import com.prm.tasks.UnMatchTask;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
@@ -15,11 +16,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ShowDetailDialog extends DialogFragment {
+public class ShowMatchedDetailDialog extends DialogFragment {
 
-	private JSONObject data;
+private JSONObject data;
 	
-	public ShowDetailDialog(JSONObject data) {
+	public ShowMatchedDetailDialog(JSONObject data) {
 		// TODO Auto-generated method stub
 		this.data = data;
 	}
@@ -27,7 +28,7 @@ public class ShowDetailDialog extends DialogFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View v = inflater.inflate(R.layout.show_detail_dialog, container);
+		View v = inflater.inflate(R.layout.show_matched_detail_dialog, container);
 		Button btnClose = (Button) v.findViewById(R.id.show_matched_detail_dialog_btnClose);
 		ImageView image = (ImageView) v.findViewById(R.id.show_matched_detail_dialog_image);
 		TextView txtName = (TextView) v.findViewById(R.id.show_matched_detail_dialog_txtName);
@@ -39,7 +40,7 @@ public class ShowDetailDialog extends DialogFragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				ShowDetailDialog.this.dismiss();
+				ShowMatchedDetailDialog.this.dismiss();
 			}
 		});
 		
@@ -48,8 +49,10 @@ public class ShowDetailDialog extends DialogFragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				like(v);
+				unmatch(v);
 			}
+
+			
 		});
 		
 		try {
@@ -64,18 +67,17 @@ public class ShowDetailDialog extends DialogFragment {
 	}
 	
 	
-	public void like(View v) {
+	public void unmatch(View v) {
+		// TODO Auto-generated method stub
 		try {
 			String accountSource = HomeActivity.json.getString("Id");
 			String accountDes = data.getString("Id");
 			
-			new LikeTask(this).execute(accountSource, accountDes);
+			new UnMatchTask(this).execute(accountSource, accountDes);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	
 	
 }

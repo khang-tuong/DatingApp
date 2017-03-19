@@ -30,16 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/show_matched_detail_dialog_txtDescription"
-        android:text="Like" />
-
-    <Button
-        android:id="@+id/show_detail_dialog_btnDislike"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/show_detail_dialog_btnLike"
-        android:layout_alignBottom="@+id/show_detail_dialog_btnLike"
-        android:layout_alignParentRight="true"
-        android:text="Dislike" />
+        android:text="Unmatched" />
 
     <ImageView
         android:id="@+id/show_matched_detail_dialog_image"
@@ -53,7 +44,7 @@
     <Button
         android:id="@+id/show_matched_detail_dialog_btnClose"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="40dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"

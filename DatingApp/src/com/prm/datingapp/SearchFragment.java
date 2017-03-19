@@ -111,8 +111,8 @@ public class SearchFragment extends Activity  {
 			LayoutInflater inflator = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = inflator.inflate(R.layout.search_list_item, null);
 			
-			item.image = (ImageView) convertView.findViewById(R.id.search_list_item_image);
-			item.txtName = (TextView) convertView.findViewById(R.id.search_list_item_txtName);
+			item.image = (ImageView) convertView.findViewById(R.id.matched_list_item_image);
+			item.txtName = (TextView) convertView.findViewById(R.id.matched_list_item_txtName);
 			
 			//item.image.setImageBitmap(this.obj.get(position).getString("imageUrl"));
 			try {
